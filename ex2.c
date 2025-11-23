@@ -178,7 +178,7 @@ int main() {
         if (Gamenum ==6)
         {  break;
         }
-        printf("Welcome to our games, please choose an option:\n");
+        printf(" \nWelcome to our games, please choose an option:\n");
         printf("1. Ducky's Unity Game\n");
         printf("2. The Memory Game\n");
         printf("3. Professor Pat's Power Calculation\n");
