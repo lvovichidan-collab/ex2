@@ -4,8 +4,8 @@ int main() {
     // MAIN MENU LOOP
 
 
-    int gameNum=1;
-    // TASK 1: Ducky's Unity Game
+    int gameNum=1, cnt=0;
+
     while (gameNum > 0 && gameNum <= 6) {
 
         printf("Welcome to our games, please choose an option:\n");
@@ -15,22 +15,24 @@ int main() {
         printf("4. The Duck Parade\n");
         printf("5. The Mystery of the Repeated Digits\n");
         printf("6. Good Night Ducks\n");
-
         scanf("%d", &gameNum);
 
 
-        while (gameNum > 6 || gameNum < 1) {// Changed text
-            printf("Welcome to our games, please choose an option:\n");
-            printf("1. Ducky's Unity Game\n");
-            printf("2. The Memory Game\n");
-            printf("3. Professor Pat's Power Calculation\n");
-            printf("4. The Duck Parade\n");
-            printf("5. The Mystery of the Repeated Digits\n");
-            printf("6. Good Night Ducks\n");
-            printf("Invalid option, please try again\n");
-            scanf("%d", &gameNum);
+
+            while (gameNum > 6 || gameNum < 1) {
+                    printf("Invalid option, please try again\n");
+                    printf("Welcome to our games, please choose an option:\n");
+                    printf("1. Ducky's Unity Game\n");
+                    printf("2. The Memory Game\n");
+                    printf("3. Professor Pat's Power Calculation\n");
+                    printf("4. The Duck Parade\n");
+                    printf("5. The Mystery of the Repeated Digits\n");
+                    printf("6. Good Night Ducks\n");
+                    scanf(" %d",&gameNum);
+
         }
         switch (gameNum) {
+            // TASK 1: Ducky's Unity Game
             case 1: {
 
                 int inputNum, coinCount = 0;
@@ -67,7 +69,7 @@ int main() {
                 printf("please enter the number of ducks:\n");
                 scanf("%d", &numDucks);
 
-                while (numDucks < 0) {
+                while (numDucks <= 0) {
                     printf("Invalid number, please try again\n");
                     scanf("%d", &numDucks);
                 }
@@ -77,6 +79,10 @@ int main() {
                 for (int i = 0 ; i < numDucks ; i++) {
                     printf("duck %d do QUAK? 1 for yes, 0 for no\n" , i + 1);
                     scanf("%d", &quackOption);
+                    while (quackOption < 0) {
+                        printf("Invalid number, please try again\n");
+                        scanf(" %d",&quackOption);
+                    }
                     quackList = quackList << 1;
                     quackList = quackList | quackOption;
                 }
@@ -163,8 +169,8 @@ int main() {
                 printf("please enter number\n");
                 scanf("%d", &inputNum);
 
-                while (inputNum < 0) {
-                    printf("invalid input, please try again\n");
+                while (inputNum <= 0) {
+                    printf("Invalid option, please try again\n");
                     scanf("%d", &inputNum);
                 }
 
