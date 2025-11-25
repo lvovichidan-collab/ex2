@@ -4,21 +4,10 @@ int main() {
     // MAIN MENU LOOP
 
 
-    int gameNum;
+    int gameNum=1;
+    // TASK 1: Ducky's Unity Game
+    while (gameNum > 0 && gameNum <= 6) {
 
-    printf("Welcome to our games, please choose an option:\n");
-    printf("1. Ducky's Unity Game\n");
-    printf("2. The Memory Game\n");
-    printf("3. Professor Pat's Power Calculation\n");
-    printf("4. The Duck Parade\n");
-    printf("5. The Mystery of the Repeated Digits\n");
-    printf("6. Good Night Ducks\n");
-
-    scanf("%d", &gameNum);
-
-
-    while (gameNum > 6 || gameNum < 1) {
-        printf("Invalid option, please try again\n"); // Changed text
         printf("Welcome to our games, please choose an option:\n");
         printf("1. Ducky's Unity Game\n");
         printf("2. The Memory Game\n");
@@ -26,11 +15,21 @@ int main() {
         printf("4. The Duck Parade\n");
         printf("5. The Mystery of the Repeated Digits\n");
         printf("6. Good Night Ducks\n");
-        scanf("%d", &gameNum);
-    }
 
-    // TASK 1: Ducky's Unity Game
-    while (gameNum > 0 && gameNum <= 6) {
+        scanf("%d", &gameNum);
+
+
+        while (gameNum > 6 || gameNum < 1) {// Changed text
+            printf("Welcome to our games, please choose an option:\n");
+            printf("1. Ducky's Unity Game\n");
+            printf("2. The Memory Game\n");
+            printf("3. Professor Pat's Power Calculation\n");
+            printf("4. The Duck Parade\n");
+            printf("5. The Mystery of the Repeated Digits\n");
+            printf("6. Good Night Ducks\n");
+            printf("Invalid option, please try again\n");
+            scanf("%d", &gameNum);
+        }
         switch (gameNum) {
             case 1: {
 
@@ -156,7 +155,7 @@ int main() {
 
             }
 
-        
+
             case 5: {
                 // Renamed variables to camelCase
                 int inputNum, currentDigit = 0;
@@ -196,31 +195,8 @@ int main() {
                 break;
             }
         }
-
         if (gameNum == 6) {
             break;
-        }
-
-        printf("\nWelcome to our games, please choose an option:\n");
-        printf("1. Ducky's Unity Game\n");
-        printf("2. The Memory Game\n");
-        printf("3. Professor Pat's Power Calculation\n");
-        printf("4. The Duck Parade\n");
-        printf("5. The Mystery of the Repeated Digits\n");
-        printf("6. Good Night Ducks\n");
-        scanf("%d", &gameNum);
-
-        // FIX: Removed first error message and changed text for validation loop
-        while (gameNum > 6 || gameNum < 1) {
-            printf("Invalid option, please try again\n"); // Changed text
-            printf("Welcome to our games, please choose an option:\n");
-            printf("1. Ducky's Unity Game\n");
-            printf("2. The Memory Game\n");
-            printf("3. Professor Pat's Power Calculation\n");
-            printf("4. The Duck Parade\n");
-            printf("5. The Mystery of the Repeated Digits\n");
-            printf("6. Good Night Ducks\n");
-            scanf("%d", &gameNum); // Removed extra error print before scanf
         }
     }
     return 0;
