@@ -196,7 +196,7 @@ int main() {
                 break;
             }
 
-            // Adding mandatory default block (REQUIRED)
+
             default: {
                 break;
             }
