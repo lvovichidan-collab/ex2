@@ -3,7 +3,7 @@
 int main() {
     // MAIN MENU LOOP
 
-    // Renamed variable to camelCase
+
     int gameNum;
 
     printf("Welcome to our games, please choose an option:\n");
@@ -16,8 +16,9 @@ int main() {
 
     scanf("%d", &gameNum);
 
+
     while (gameNum > 6 || gameNum < 1) {
-        printf("Invalid number, please try again\n");
+        printf("Invalid option, please try again\n"); // Changed text
         printf("Welcome to our games, please choose an option:\n");
         printf("1. Ducky's Unity Game\n");
         printf("2. The Memory Game\n");
@@ -25,7 +26,6 @@ int main() {
         printf("4. The Duck Parade\n");
         printf("5. The Mystery of the Repeated Digits\n");
         printf("6. Good Night Ducks\n");
-        printf("Invalid number, please try again\n");
         scanf("%d", &gameNum);
     }
 
@@ -33,7 +33,7 @@ int main() {
     while (gameNum > 0 && gameNum <= 6) {
         switch (gameNum) {
             case 1: {
-                // Renamed variables to camelCase
+
                 int inputNum, coinCount = 0;
 
                 printf("please enter a positive number:\n");
@@ -61,7 +61,7 @@ int main() {
             // TASK 2: The Memory Game
             case 2:
             {
-                // Renamed variables to camelCase
+
                 int numDucks, quackOption;
                 long quackList = 0;
 
@@ -86,7 +86,8 @@ int main() {
                     if ((quackList >> (numDucks - i - 1)) & 1) {
                         printf("duck number %d do Quak\n" , i + 1);
                     } else {
-                        printf("duck number %d do sh...,\n" , i + 1);
+
+                        printf("duck number %d do Sh...\n" , i + 1);
                     }
                 }
                 break;
@@ -94,7 +95,7 @@ int main() {
 
             // TASK 3: Professor Pat's Power Calculation
             case 3: {
-                // Renamed variables to camelCase
+
                 int baseNum, exponentVal, resultPower = 1;
 
                 printf("please enter the number\n");
@@ -122,7 +123,7 @@ int main() {
 
             // TASK 4: The Duck Parade
             case 4: {
-                // Renamed variable to camelCase
+
                 int numDucks;
 
                 printf("please enter number of ducks:\n");
@@ -132,42 +133,30 @@ int main() {
                     printf("Invalid number, please try again\n");
                     scanf("%d", &numDucks);
                 }
+                while (numDucks>0) {
 
-                int totalDucksPrinted = 0;
-                int currentDucksInRow;
-
-                while (totalDucksPrinted < numDucks) {
-                    if (numDucks - totalDucksPrinted >= 10) {
-                        currentDucksInRow = 10;
-                    } else {
-                        currentDucksInRow = numDucks - totalDucksPrinted;
-                    }
-
-                    // Line 1: Head
-                    for (int i = 0; i < currentDucksInRow; i++) {
-                        printf("   _");
-                    }
+                  for (int i = 0 ; i < numDucks && i < 10 ; i++) {
+                      printf("    _ ");
+                  }
                     printf("\n");
 
-                    // Line 2: Body
-                    for (int i = 0; i < currentDucksInRow; i++) {
+                    for (int i = 0 ; i < numDucks && i < 10 ; i++) {
                         printf(" __(o)>");
                     }
                     printf("\n");
 
-                    // Line 3: Legs
-                    for (int i = 0; i < currentDucksInRow; i++) {
-                        printf(" \\___)");
+                    for (int i = 0 ; i < numDucks && i < 10 ; i++) {
+                        printf(" \\___) ");
                     }
+                   numDucks = numDucks-10;
                     printf("\n");
-
-                    totalDucksPrinted += currentDucksInRow;
                 }
 
                 break;
+
             }
 
-            // TASK 5: The Mystery of the Repeated Digits
+        
             case 5: {
                 // Renamed variables to camelCase
                 int inputNum, currentDigit = 0;
@@ -221,8 +210,9 @@ int main() {
         printf("6. Good Night Ducks\n");
         scanf("%d", &gameNum);
 
+        // FIX: Removed first error message and changed text for validation loop
         while (gameNum > 6 || gameNum < 1) {
-            printf("Invalid number, please try again\n");
+            printf("Invalid option, please try again\n"); // Changed text
             printf("Welcome to our games, please choose an option:\n");
             printf("1. Ducky's Unity Game\n");
             printf("2. The Memory Game\n");
@@ -230,8 +220,7 @@ int main() {
             printf("4. The Duck Parade\n");
             printf("5. The Mystery of the Repeated Digits\n");
             printf("6. Good Night Ducks\n");
-            printf("Invalid number, please try again\n");
-            scanf("%d", &gameNum);
+            scanf("%d", &gameNum); // Removed extra error print before scanf
         }
     }
     return 0;
